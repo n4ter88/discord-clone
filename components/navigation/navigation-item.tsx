@@ -20,6 +20,10 @@ export const NavigationItem = ({
     const params = useParams();
     const router = useRouter();
 
+    const onClick = () => {
+        router.push(`/servers/${id}`)
+    }
+
     return (
         <ActionTooltip
             side= "right"
@@ -27,13 +31,14 @@ export const NavigationItem = ({
             label={name}
         >
             <button
-                onClick= {() =>{}}
+                onClick= {onClick}
                 className= "group relative flex items-center"               
             >
                 <div className={cn(
                     "absolute left-0 bg-primary round-r-full transition-all w-[4px]",
                     params?.serverId !== id && "group-hover:h-[20px]",
-                    params?.server === id ? "h-[8px]" : "h-[36px]" // I had to switch 8 and 36 to get it to look correct?
+                    // I had to switch 8 and 36 to get it to look correct?
+                    params?.server === id ? "h-[8px]" : "h-[36px]" 
                     )} />
                 <div className={cn(
                     "relative group flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transiton-all overflow-hidden",
