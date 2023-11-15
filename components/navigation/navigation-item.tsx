@@ -37,8 +37,7 @@ export const NavigationItem = ({
                 <div className={cn(
                     "absolute left-0 bg-primary round-r-full transition-all w-[4px]",
                     params?.serverId !== id && "group-hover:h-[20px]",
-                    // I had to switch 8 and 36 to get it to look correct?
-                    params?.server === id ? "h-[8px]" : "h-[36px]" 
+                    params?.server === id ? "h-[36px]" : "h-[8px]" 
                     )} />
                 <div className={cn(
                     "relative group flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transiton-all overflow-hidden",
