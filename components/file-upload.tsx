@@ -1,6 +1,6 @@
-"use clinet";
+"use client";
 
-import { X } from "lucide-react";
+import { FileIcon, X } from "lucide-react";
 import Image from "next/image";
 
 import { UploadDropzone } from "@/lib/uploadthing";
@@ -25,7 +25,7 @@ export const FileUpload = ({
         return (
             <div className="relative h-20 w-20">
                 <Image
-                    fill
+                    fill                    
                     src={value}
                     alt="upload"
                     className="rounded-full"
