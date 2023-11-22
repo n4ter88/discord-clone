@@ -17,7 +17,7 @@ import { useModal } from "@/hooks/use-modal-store";
 import { Button } from "@/components/ui/button";
 
 export const DeleteChannelModal = () => {
-  const { isOpen, onClose, type, data} = useModal();
+  const { isOpen, onClose, type, data } = useModal();
   const router = useRouter();
 
   const isModalOpen = isOpen && type === "deleteChannel";
@@ -42,8 +42,8 @@ export const DeleteChannelModal = () => {
       router.push(`/servers/${server?.id}`);
     } catch (error) {
       console.log(error);
-      } finally {
-        setIsLoading(false);
+    } finally {
+      setIsLoading(false);
     }
   }
 
