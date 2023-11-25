@@ -32,12 +32,13 @@ export const DeleteServerModal = () => {
       await axios.delete(`/api/servers/${server?.id}`);
 
       onClose();
-      router.refresh();
       router.push("/");
     } catch (error) {
       console.log(error);
       } finally {
         setIsLoading(false);
+        // updated this code so it would refresh after pages deleted different than his guide
+        router.refresh();
     }
   }
 

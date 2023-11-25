@@ -38,12 +38,13 @@ export const DeleteChannelModal = () => {
       await axios.delete(url);
 
       onClose();
-      router.refresh();
       router.push(`/servers/${server?.id}`);
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
+              // updated this code so it would refresh after pages deleted different than his guide
+      router.refresh();
     }
   }
 

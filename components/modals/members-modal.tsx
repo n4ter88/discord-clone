@@ -22,7 +22,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
 import { useModal } from "@/hooks/use-modal-store";
 import { ServerWithMembersWithProfiles } from "@/types";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -38,7 +37,6 @@ import {
     DropdownMenuSubContent,
     DropdownMenuTrigger,
     DropdownMenuSubTrigger,
-    
   } from "@/components/ui/dropdown-menu"
 
 const roleIconMap = {
@@ -49,11 +47,11 @@ const roleIconMap = {
 
 export const MembersModel = () => {
   const router = useRouter();
-  const { onOpen, isOpen, onClose, type, data} = useModal();
+  const { onOpen, isOpen, onClose, type, data } = useModal();
   const [loadingId, setLoadingId] = useState("");
 
   const isModalOpen = isOpen && type === "members";
-  const { server } = data as { server: ServerWithMembersWithProfiles} ;
+  const { server } = data as { server: ServerWithMembersWithProfiles } ;
 
   const onKick = async (memberId: string)  => {
     try {
@@ -68,8 +66,7 @@ export const MembersModel = () => {
       const response = await axios.delete(url);
 
       router.refresh();
-      onOpen("members", { server: response.data});
-      
+      onOpen("members", { server: response.data });
     } catch (error) {
       console.log(error);
     } finally {
@@ -91,7 +88,6 @@ export const MembersModel = () => {
 
       router.refresh();
       onOpen("members", { server: response.data });
-
     } catch (error) {
       console.log(error);
     } finally {
@@ -186,7 +182,6 @@ export const MembersModel = () => {
                 )}
               </div>
             ))}
-
           </ScrollArea>
       </DialogContent>
     </Dialog>
