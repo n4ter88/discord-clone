@@ -5,7 +5,7 @@ import {
     useContext,
     useEffect,
     useState
-} from 'react'
+} from "react";
 import { io as ClientIO } from "socket.io-client";
 
 type SocketContextType = {
@@ -36,7 +36,7 @@ export const SocketProvider = ({
           //  addTrailingSlash: false,
         });
 
-        socketInstance.on("context", () => {
+        socketInstance.on("connect", () => {
             setIsConnected(true);
         });
 
