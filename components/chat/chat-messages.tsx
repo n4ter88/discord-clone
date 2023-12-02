@@ -10,6 +10,7 @@ import { useChatSocket } from "@/hooks/use-chat-socket";
 
 import { ChatWelcome } from "./chat-welcome";
 import { ChatItem } from "./chat-item";
+import { useChatScroll } from "@/hooks/use-chat-scroll";
 
 const DATE_FORMAT = "d MMM yyyy, HH:mm";
 
@@ -62,6 +63,13 @@ export const ChatMessages = ({
         paramValue,
     });
     useChatSocket({ queryKey, addKey, updateKey });
+    useChatScroll({
+        chatRef,
+        bottomRef,
+        loadMore: fetchNextPage,
+        shouldLoadMore: !isFetchingNextPage && !!hasNextPage,
+        count: data?.pages?.[0]?.items?.length ?? 0,
+    })
 
     if(status === "loading") {
         return (
@@ -100,7 +108,7 @@ export const ChatMessages = ({
                         <Loader2 className= "h-6 w-6 text-zinc-500 animate-spin my-4"/>
                     ) : (
                         <button
-                            onClick={() => fetchNextPage}
+                            onClick={() => fetchNextPage()}
                             className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 text-xs my-4 dark:hover:text-zinc-300 transition"
                         >
                             Load Previous messages
