@@ -4,7 +4,7 @@ import { Hash, Mic, ShieldAlert, ShieldCheck, Video } from "lucide-react";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { currentProfile } from "@/lib/current-profie";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 
 import { ServerHeader } from "./server-header";

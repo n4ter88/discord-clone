@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
 import { getOrCreateConversation } from "@/lib/conversation";
-import { currentProfile } from "@/lib/current-profie";
+import { currentProfile } from "@/lib/current-profile";
 import { ChatHeader } from "@/components/chat/chat-header";
 
 interface MemberIdPageProps {

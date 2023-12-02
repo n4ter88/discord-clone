@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { currentProfile } from "@/lib/current-profie";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 
 export async function PATCH(
